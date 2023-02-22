@@ -3,14 +3,13 @@ body{
         color: white;
 }
 
+nav{
+        background-color: #1B9BF0;
+}
+
 .card{
         background-color: transparent !important;
         border: none;
-}
-
-main{
-    margin: 0 auto;
-    max-width: 800px;
 }
 
 footer {
@@ -71,4 +70,40 @@ input[type="password"]:focus
         outline: none;
         box-shadow: none;
         color: white;
+}
+.textarea
+{
+    background: transparent;
+    border: solid 1px black;
+    color: white;
+}
+
+.textarea:hover
+{
+        background: transparent;
+        border: solid 1px white;
+}
+.textarea:focus
+{
+        background: transparent;
+        border: solid 1px white;
+        outline: none;
+        box-shadow: none;
+        color: white;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:90px;
+	right:40px;
+	background-color:#1B9BF0;;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+}
+
+.my-float{
+	margin-top:22px;
 }

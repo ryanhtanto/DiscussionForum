@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import LoginIMG from '../images/login.jpg'
 
 function Login() {
@@ -17,6 +18,7 @@ function Login() {
                                                 <button type="button" className='btn btn-light'><b>Submit</b></button>
                                         </div>
                                 </form>
+                                <p className='mt-3'>Don&apos;t have an account? <Link to="/login">Sign up</Link></p>
                         </div>
                 </section>
         );

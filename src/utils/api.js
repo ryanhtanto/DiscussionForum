@@ -101,8 +101,8 @@ const api = (() => {
           return users;
         }
       
-        async function getAllTalks() {
-          const response = await fetch(`${BASE_URL}/talks`);
+        async function getAllThreads() {
+          const response = await fetch(`${BASE_URL}/threads`);
       
           const responseJson = await response.json();
       
@@ -112,13 +112,13 @@ const api = (() => {
             throw new Error(message);
           }
       
-          const { data: { talks } } = responseJson;
+          const { data: { threads } } = responseJson;
       
-          return talks;
+          return threads;
         }
       
         async function getTalkDetail(id) {
-          const response = await fetch(`${BASE_URL}/talks/${id}`);
+          const response = await fetch(`${BASE_URL}/threads/${id}`);
       
           const responseJson = await response.json();
       
@@ -134,7 +134,7 @@ const api = (() => {
         }
       
         async function createTalk({ text, replyTo = '' }) {
-          const response = await _fetchWithAuth(`${BASE_URL}/talks`, {
+          const response = await _fetchWithAuth(`${BASE_URL}/threads`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ const api = (() => {
         }
       
         async function toggleLikeTalk(id) {
-          const response = await _fetchWithAuth(`${BASE_URL}/talks/likes`, {
+          const response = await _fetchWithAuth(`${BASE_URL}/threads/likes`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -185,7 +185,7 @@ const api = (() => {
           login,
           getOwnProfile,
           getAllUsers,
-          getAllTalks,
+          getAllThreads,
           createTalk,
           toggleLikeTalk,
           getTalkDetail,

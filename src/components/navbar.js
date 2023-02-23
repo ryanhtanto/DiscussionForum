@@ -1,7 +1,10 @@
 import React from 'react';
 import { FiLogOut } from "react-icons/fi";
+import PropTypes from 'prop-types';
 
-function Navbar() {
+function Navbar({ signOut }) {
+        // const { id, avatar, name } = authUser;
+
         return (
                 <nav className="navbar navbar-expand-lg">
                         <div className="container-fluid content">
@@ -12,7 +15,7 @@ function Navbar() {
                                 <div className="collapse navbar-collapse" id="navbarNav">
                                         <ul className="navbar-nav ms-auto">
                                                 <li className="nav-item">
-                                                        <FiLogOut />
+                                                        <FiLogOut onClick={signOut}/>
                                                 </li>
                                         </ul>
                                 </div>
@@ -20,5 +23,17 @@ function Navbar() {
                 </nav>
         );
 }
+
+// const authUserShape = {
+//         id: PropTypes.string.isRequired,
+//         name: PropTypes.string.isRequired,
+//         photo: PropTypes.string.isRequired,
+      
+// };
+
+Navbar.propTypes = {
+        // authUser: PropTypes.shape(authUserShape).isRequired,
+        signOut: PropTypes.func.isRequired,
+};
 
 export default Navbar;

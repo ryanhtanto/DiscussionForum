@@ -1,13 +1,13 @@
-body{
+body {
         background-color: #2F2F2F;
         color: white;
 }
 
-nav{
+nav {
         background-color: #1B9BF0;
 }
 
-.card{
+.card {
         background-color: transparent !important;
         border: none;
 }
@@ -21,70 +21,28 @@ footer {
         color: white;
 }
 
-.content{
+.content {
         margin: 0 auto;
         max-width: 800px;
 }
 
-.btn{
+.btn {
         border-radius: 20px;
         border: 1px solid;
 }
 
-input[type="text"]
-{
-    background: transparent;
-    border: solid 1px black;
-    color: white;
-}
-
-input[type="text"]:hover
-{
+input[type="text"] {
         background: transparent;
-        border: solid 1px white;
-}
-input[type="text"]:focus
-{
-        background: transparent;
-        border: solid 1px white;
-        outline: none;
-        box-shadow: none;
+        border: solid 1px black;
         color: white;
 }
-input[type="password"]
-{
-    background: transparent;
-    border: solid 1px black;
-    color: white;
+
+input[type="text"]:hover {
+        background: transparent;
+        border: solid 1px white;
 }
 
-input[type="password"]:hover
-{
-        background: transparent;
-        border: solid 1px white;
-}
-input[type="password"]:focus
-{
-        background: transparent;
-        border: solid 1px white;
-        outline: none;
-        box-shadow: none;
-        color: white;
-}
-.textarea
-{
-    background: transparent;
-    border: solid 1px black;
-    color: white;
-}
-
-.textarea:hover
-{
-        background: transparent;
-        border: solid 1px white;
-}
-.textarea:focus
-{
+input[type="text"]:focus {
         background: transparent;
         border: solid 1px white;
         outline: none;
@@ -92,18 +50,76 @@ input[type="password"]:focus
         color: white;
 }
 
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:90px;
-	right:40px;
-	background-color:#1B9BF0;;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
+input[type="email"] {
+        background: transparent;
+        border: solid 1px black;
+        color: white;
 }
 
-.my-float{
-	margin-top:22px;
+input[type="email"]:hover {
+        background: transparent;
+        border: solid 1px white;
+}
+
+input[type="email"]:focus {
+        background: transparent;
+        border: solid 1px white;
+        outline: none;
+        box-shadow: none;
+        color: white;
+}
+
+input[type="password"] {
+        background: transparent;
+        border: solid 1px black;
+        color: white;
+}
+
+input[type="password"]:hover {
+        background: transparent;
+        border: solid 1px white;
+}
+
+input[type="password"]:focus {
+        background: transparent;
+        border: solid 1px white;
+        outline: none;
+        box-shadow: none;
+        color: white;
+}
+
+.textarea {
+        background: transparent;
+        border: solid 1px black;
+        color: white;
+}
+
+.textarea:hover {
+        background: transparent;
+        border: solid 1px white;
+}
+
+.textarea:focus {
+        background: transparent;
+        border: solid 1px white;
+        outline: none;
+        box-shadow: none;
+        color: white;
+}
+
+.float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 90px;
+        right: 40px;
+        background-color: #1B9BF0;
+        ;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+}
+
+.my-float {
+        margin-top: 22px;
 }

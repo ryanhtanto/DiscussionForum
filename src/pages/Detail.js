@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiThumbsUp } from "react-icons/fi";
 import { FiThumbsDown } from "react-icons/fi";
 import { FiArrowLeft } from "react-icons/fi";
+import { FiMessageCircle } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 
 function Detail() {
+        const [showCommentBox, setShowCommentBox] = useState(false);
         return (
                 <section>
                         <div>
@@ -25,28 +27,34 @@ function Detail() {
                                                 <div className='d-flex mt-2'>
                                                         <FiThumbsUp /> 
                                                         <FiThumbsDown className='mx-4' />
+                                                        <FiMessageCircle onClick={() => setShowCommentBox(!showCommentBox)} />
                                                 </div>
-                                                <h6 className='mt-2'>Leave a Comments</h6>
-                                                <form>
-                                                        <textarea className="form-control textarea" placeholder="Leave a comment here" id="comments"></textarea>
-                                                        <div className="d-grid gap-2 mt-3">
-                                                                <button type="button" className='btn btn-light'><b>Submit</b></button>
+                                                {showCommentBox && (
+                                                        <div>
+                                                                <h6 className='mt-2'>Leave a Comments</h6>
+                                                                <form>
+                                                                        <textarea className="form-control textarea" placeholder="Leave a comment here" id="comments"></textarea>
+                                                                        <div className="d-grid gap-2 mt-3">
+                                                                                <button type="button" className='btn btn-light'><b>Submit</b></button>
+                                                                        </div>
+                                                                </form>
+                                                                <div className='mt-3 comments'>
+                                                                <h6>Comments (1)</h6>
+                                                                <div className='detail-comment'>
+                                                                        <h6 className='mt-4'><b>Dimas Saputra</b></h6>
+                                                                        <span className="text-muted">2 Hours ago</span>
+                                                                        <p>Nice!</p>
+                                                                        <div className='d-flex mt-2'>
+                                                                                <FiThumbsUp/>
+                                                                                <FiThumbsDown className='mx-4' />
+                                                                        </div>
+                                                                        </div>
+                                                                </div>
                                                         </div>
-                                                </form>
+                                                )}
+                                                <hr></hr>
                                         </div>
-                                        <div className='mt-3 comments'>
-                                                <h6>Comments (1)</h6>
-                                                <div className='detail-comment'>
-                                                        <h6 className='mt-4'><b>Dimas Saputra</b></h6>
-                                                        <span className="text-muted">2 Hours ago</span>
-                                                        <p>Nice!</p>
-                                                        <div className='d-flex mt-2'>
-                                                                <FiThumbsUp/>
-                                                                <FiThumbsDown className='mx-4' />
-                                                        </div>
-                                                        <hr></hr>
-                                                </div>
-                                        </div>
+                                        
                                 </div>
                         </div>
                 </section>

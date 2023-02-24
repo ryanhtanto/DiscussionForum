@@ -111,10 +111,9 @@ input[type="password"]:focus {
         position: fixed;
         width: 60px;
         height: 60px;
-        bottom: 90px;
+        bottom: 40px;
         right: 40px;
         background-color: #1B9BF0;
-        ;
         color: #FFF;
         border-radius: 50px;
         text-align: center;
@@ -122,4 +121,10 @@ input[type="password"]:focus {
 
 .my-float {
         margin-top: 22px;
+}
+
+.category{
+        background-color: white;
+        border-radius: 20px;
+        color: black;
 }

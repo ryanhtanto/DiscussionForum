@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import { asyncPreloadProcess } from './states/isPreload/action';
 import { asyncUnsetAuthUser } from './states/authUser/action';
+import Loading from './components/loading';
 
 function App() {
   const {
@@ -42,27 +43,28 @@ function App() {
           </Routes>
         </main>
         <footer>
+          <Loading />
           <Footer />
         </footer>
+        
       </>
     )
   }
   return (
     <>
+      
       <header>
         <Navbar authUser={authUser} signOut={onSignOut}/>
       </header>
       <main className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Home />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route path="/addThread" element={<AddThreads />} />
         </Routes>
       </main>
-      
+      <Loading />
     </>
   );
 }

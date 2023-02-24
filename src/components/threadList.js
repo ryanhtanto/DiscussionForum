@@ -3,15 +3,18 @@ import ThreadItem, { threadItemShape } from './threadItem';
 import PropTypes from 'prop-types';
 
 function ThreadList({ threads }) {
-  return (
-        <div className='py-1'>
-            {
-                  threads.map((thread) => (
-                        <ThreadItem key={thread.id} {...thread} />
-                  ))
-            }  
-        </div>
-  );
+      return (
+            <div className='py-1'>
+                  {
+                        threads.map((thread) => (
+                              <div key={thread.id}>
+                                    <ThreadItem  {...thread}/>
+                                    <hr></hr>
+                              </div>
+                        ))
+                  }  
+            </div>
+      );
 }
 
 ThreadList.propTypes = {

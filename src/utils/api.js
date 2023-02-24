@@ -117,7 +117,7 @@ const api = (() => {
           return threads;
         }
       
-        async function getTalkDetail(id) {
+        async function getThreadDetail(id) {
           const response = await fetch(`${BASE_URL}/threads/${id}`);
       
           const responseJson = await response.json();
@@ -127,21 +127,22 @@ const api = (() => {
           if (status !== 'success') {
             throw new Error(message);
           }
-      
-          const { data: { talkDetail } } = responseJson;
-      
-          return talkDetail;
+
+          const { data: { detailThread } } = responseJson;
+          
+          return detailThread;
         }
       
-        async function createTalk({ text, replyTo = '' }) {
+        async function createThread({ title, category, body}) {
           const response = await _fetchWithAuth(`${BASE_URL}/threads`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              text,
-              replyTo,
+              title, 
+              category, 
+              body,
             }),
           });
       
@@ -153,19 +154,19 @@ const api = (() => {
             throw new Error(message);
           }
       
-          const { data: { talk } } = responseJson;
-      
-          return talk;
+          const { data: { thread } } = responseJson;
+          
+          return thread;
         }
-      
-        async function toggleLikeTalk(id) {
-          const response = await _fetchWithAuth(`${BASE_URL}/threads/likes`, {
+
+        async function createComment({ content, id }) {
+          const response = await _fetchWithAuth(`${BASE_URL}/threads/${id}/comments`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              talkId: id,
+              content,
             }),
           });
       
@@ -176,6 +177,10 @@ const api = (() => {
           if (status !== 'success') {
             throw new Error(message);
           }
+      
+          const { data: { comment } } = responseJson;
+          
+          return comment;
         }
       
         return {
@@ -186,9 +191,9 @@ const api = (() => {
           getOwnProfile,
           getAllUsers,
           getAllThreads,
-          createTalk,
-          toggleLikeTalk,
-          getTalkDetail,
+          createThread,
+          getThreadDetail,
+          createComment
         };
       })();
       

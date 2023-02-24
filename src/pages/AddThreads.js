@@ -1,8 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from "react-icons/fi";
+import AddThreadsForm from '../components/addThreadForm';
+import { useDispatch } from 'react-redux';
+import { asyncAddThread } from '../states/threads/action';
 
 function AddThreads() {
+        const dispatch = useDispatch();
+        const navigate = useNavigate()
+        const onAddThread = (title, category, body) => {
+                dispatch(asyncAddThread({ title, category, body }));
+                navigate('/')
+        };
+
         return (
                 <section className='p-5'>
                         <div className='d-flex'>
@@ -11,20 +21,7 @@ function AddThreads() {
                                 </Link>
                                 <h3 className='mx-3'>Threads</h3>
                         </div>
-                        <div className=''>
-                                <h3 className='mt-5'>Add Threads</h3>
-                                <form className='mt-4'>
-                                        <div className="mb-3">
-                                                <input type="text" className="form-control" id="title" placeholder="Title" />
-                                        </div>
-                                        <div className="mb-3">
-                                                <textarea className="form-control textarea" placeholder="Leave a comment here" id="comments"></textarea>
-                                        </div>
-                                        <div className="d-grid gap-2">
-                                                <button type="button" className='btn btn-light'><b>Submit</b></button>
-                                        </div>
-                                </form>
-                        </div>
+                        <AddThreadsForm addThread={onAddThread}/>
                 </section>
         );
 }

@@ -9,7 +9,6 @@ function Home() {
         const {
                 threads = [],
                 users = [],
-                authUser,
         } = useSelector((states) => states);
 
         const dispatch = useDispatch();
@@ -20,10 +19,9 @@ function Home() {
 
         const threadList = threads.map((thread) => ({
                 ...thread,
-                user: users.find((user) => user.id === thread.user),
-                authUser: authUser.id,
+                user: users.find((user) => user.id === thread.ownerId)
         }));
-
+        
         return (
                 <section>
                         <h3 className='mt-5'>Forum Discussion</h3>

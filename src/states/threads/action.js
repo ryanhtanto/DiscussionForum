@@ -1,5 +1,5 @@
 import api from '../../utils/api';
-
+/* eslint-disable no-alert */
 const ActionType = {
   RECEIVE_THREADS: 'RECEIVE_THREADS',
   ADD_THREAD: 'ADD_THREAD',
@@ -33,7 +33,6 @@ function asyncAddThread({ title, category, body }) {
     }
   };
 }
-
 
 export {
   ActionType,

@@ -1,5 +1,6 @@
-import api from '../../utils/api';
+/* eslint-disable no-alert */
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
 
 const ActionType = {
   SET_AUTH_USER: 'SET_AUTH_USER',

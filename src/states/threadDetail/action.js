@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import api from '../../utils/api';
 
 const ActionType = {
@@ -58,5 +59,5 @@ export {
   clearThreadDetailActionCreator,
   asyncReceiveThreadDetail,
   addCommentActionCreator,
-  asyncAddComment
+  asyncAddComment,
 };

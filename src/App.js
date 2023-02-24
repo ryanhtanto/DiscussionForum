@@ -24,7 +24,6 @@ function App() {
     dispatch(asyncPreloadProcess());
   }, [dispatch]);
 
-
   const onSignOut = () => {
     dispatch(asyncUnsetAuthUser());
   };
@@ -32,9 +31,9 @@ function App() {
   if (isPreload) {
     return null;
   }
-  
-  if (authUser === null){
-    return(
+
+  if (authUser === null) {
+    return (
       <>
         <main className="content">
           <Routes>
@@ -46,15 +45,15 @@ function App() {
           <Loading />
           <Footer />
         </footer>
-        
+
       </>
-    )
+    );
   }
   return (
     <>
-      
+
       <header>
-        <Navbar authUser={authUser} signOut={onSignOut}/>
+        <Navbar authUser={authUser} signOut={onSignOut} />
       </header>
       <main className="content">
         <Routes>

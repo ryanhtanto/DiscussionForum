@@ -22,15 +22,7 @@ function Navbar({ signOut }) {
   );
 }
 
-// const authUserShape = {
-//         id: PropTypes.string.isRequired,
-//         name: PropTypes.string.isRequired,
-//         photo: PropTypes.string.isRequired,
-
-// };
-
 Navbar.propTypes = {
-  // authUser: PropTypes.shape(authUserShape).isRequired,
   signOut: PropTypes.func.isRequired,
 };
 

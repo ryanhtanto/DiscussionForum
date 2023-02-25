@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable import/named */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMessageCircle } from 'react-icons/fi';
@@ -13,7 +11,7 @@ function ThreadItem({
   return (
     <div className="item-list mt-5">
       <div className="d-flex">
-        <img src={avatar} style={{ width: '30px', height: 'auto', borderRadius: '20px' }} />
+        <img src={avatar} style={{ width: '30px', height: 'auto', borderRadius: '20px' }} alt="avatar" />
         <Link to={`/detail/${id}`} className="text-decoration-none mx-2"><h5>{title}</h5></Link>
       </div>
       <p>{body.replace(/(<([^>]+)>)/gi, '')}</p>

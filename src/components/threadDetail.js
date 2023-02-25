@@ -1,7 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-indent */
 /* eslint-disable react/forbid-prop-types */
-/* eslint-disable import/named */
 import React, { useState } from 'react';
 import { FiMessageCircle } from 'react-icons/fi';
 import PropTypes from 'prop-types';
@@ -26,7 +23,7 @@ function ThreadDetail({
           Made by
           <b>{owner.name}</b>
         </span>
-        <img className="mx-2" src={owner.avatar} style={{ width: '30px', height: 'auto', borderRadius: '20px' }} />
+        <img className="mx-2" src={owner.avatar} style={{ width: '30px', height: 'auto', borderRadius: '20px' }} alt="avatar" />
         <span className="text-muted">{postedAt(createdAt)}</span>
       </div>
       <div className="d-flex mt-2">
@@ -44,7 +41,7 @@ function ThreadDetail({
           </h6>
           {
                 comments.map((comment) => (
-                        <CommentItem key={comment.id} comment={comment} />
+                  <CommentItem key={comment.id} comment={comment} />
                 ))
         }
         </div>

@@ -1,8 +1,11 @@
 /* eslint-disable no-alert */
 const api = (() => {
   const BASE_URL = 'https://forum-api.dicoding.dev/v1';
+  function getAccessToken() {
+    return localStorage.getItem('accessToken');
+  }
 
-  async function _fetchWithAuth(url, options = {}) {
+  async function fetchWithAuth(url, options = {}) {
     return fetch(url, {
       ...options,
       headers: {
@@ -14,10 +17,6 @@ const api = (() => {
 
   function putAccessToken(token) {
     localStorage.setItem('accessToken', token);
-  }
-
-  function getAccessToken() {
-    return localStorage.getItem('accessToken');
   }
 
   async function register({ name, email, password }) {
@@ -71,7 +70,7 @@ const api = (() => {
   }
 
   async function getOwnProfile() {
-    const response = await _fetchWithAuth(`${BASE_URL}/users/me`);
+    const response = await fetchWithAuth(`${BASE_URL}/users/me`);
 
     const responseJson = await response.json();
 
@@ -135,7 +134,7 @@ const api = (() => {
   }
 
   async function createThread({ title, category, body }) {
-    const response = await _fetchWithAuth(`${BASE_URL}/threads`, {
+    const response = await fetchWithAuth(`${BASE_URL}/threads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -161,7 +160,7 @@ const api = (() => {
   }
 
   async function createComment({ content, id }) {
-    const response = await _fetchWithAuth(`${BASE_URL}/threads/${id}/comments`, {
+    const response = await fetchWithAuth(`${BASE_URL}/threads/${id}/comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

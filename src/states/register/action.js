@@ -1,5 +1,7 @@
-import api from '../../utils/api';
 /* eslint-disable no-alert */
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
+
 const ActionType = {
   RECEIVE_USERS: 'RECEIVE_USERS',
 };
@@ -14,12 +16,14 @@ function receiveRegisterActionCreator(users) {
 }
 
 function asyncRegisterUser({ name, email, password }) {
-  return async () => {
+  return async (dispatch) => {
+    dispatch(showLoading());
     try {
       await api.register({ name, email, password });
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 

@@ -7,9 +7,7 @@ import { asyncAddComment } from '../states/threadDetail/action';
 function ThreadComment({ id, refresh }) {
   const [content, setContent] = useInput('');
   const dispatch = useDispatch();
-
-  const createComment = async (e) => {
-    e.preventDefault();
+  const createComment = async () => {
     dispatch(asyncAddComment({ content, id }));
     refresh();
   };

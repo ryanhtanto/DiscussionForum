@@ -1,5 +1,7 @@
-import api from '../../utils/api';
 /* eslint-disable no-alert */
+import { showLoading, hideLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
+
 const ActionType = {
   RECEIVE_THREADS: 'RECEIVE_THREADS',
   ADD_THREAD: 'ADD_THREAD',
@@ -25,12 +27,14 @@ function addThreadActionCreator(thread) {
 
 function asyncAddThread({ title, category, body }) {
   return async (dispatch) => {
+    dispatch(showLoading());
     try {
       const thread = await api.createThread({ title, category, body });
       dispatch(addThreadActionCreator(thread));
     } catch (error) {
       alert(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 

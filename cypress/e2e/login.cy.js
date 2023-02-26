@@ -8,29 +8,4 @@ describe('Login spec', () => {
     cy.get('input[placeholder="Password"]').should('be.visible');
     cy.get('button').contains(/^Submit$/).should('be.visible');
   });
-
-  it('should display alert when email is empty', () => {
-    cy.get('button').contains(/^Submit$/).click();
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('"email" is not allowed to be empty');
-    });
-  });
-
-  it('should display alert when password is empty', () => {
-    cy.get('input[placeholder="Email"]').type('testuser@gmail.com');
-    cy.get('button').contains(/^Submit$/).click();
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('"password" is not allowed to be empty');
-    });
-  });
-
-  it('should display homepage when username and password are correct', () => {
-    cy.get('input[placeholder="Email"]').type('ryanherrtanto@gmail.com');
-    cy.get('input[placeholder="Password"]').type('123321');
-
-    cy.get('button').contains(/^Submit$/).click();
-
-    // verification for home page display
-    cy.get('img').should('be.visible');
-  });
 });

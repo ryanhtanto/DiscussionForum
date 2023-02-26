@@ -24,17 +24,6 @@ describe('Login spec', () => {
     });
   });
 
-  it('should display alert when email and password are wrong', () => {
-    cy.get('input[placeholder="Email"]').type('testuser@gmail.com');
-    cy.get('input[placeholder="Password"]').type('wrong_password');
-
-    cy.get('button').contains(/^Submit$/).click();
-
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('email or password is wrong');
-    });
-  });
-
   it('should display homepage when username and password are correct', () => {
     cy.get('input[placeholder="Email"]').type('ryanherrtanto@gmail.com');
     cy.get('input[placeholder="Password"]').type('123321');

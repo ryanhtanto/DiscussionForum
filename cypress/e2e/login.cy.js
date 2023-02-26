@@ -31,7 +31,7 @@ describe('Login spec', () => {
     cy.get('button').contains(/^Submit$/).click();
 
     cy.on('window:alert', (str) => {
-      expect(str).tp.equal('email or password is wrong');
+      expect(str).to.equal('email or password is wrong');
     });
   });
 

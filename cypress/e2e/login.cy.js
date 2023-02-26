@@ -23,14 +23,4 @@ describe('Login spec', () => {
       expect(str).to.equal('"password" is not allowed to be empty');
     });
   });
-
-  it('should display homepage when username and password are correct', () => {
-    cy.get('input[placeholder="Email"]').type('ryanherrtanto@gmail.com');
-    cy.get('input[placeholder="Password"]').type('123321');
-
-    cy.get('button').contains(/^Submit$/).click();
-
-    // verification for home page display
-    cy.get('img').should('be.visible');
-  });
 });

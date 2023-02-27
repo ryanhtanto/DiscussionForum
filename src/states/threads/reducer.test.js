@@ -1,5 +1,12 @@
 /* eslint-disable no-undef */
-
+/**
+ * test scenario for shared action test
+ *
+ * - threadReducers  function
+ *  - should return the initial state when given by unknown action
+ *  - should return the threads when given by RECEIVE_THREADS action
+ *
+ */
 import threadsReducer from './reducer';
 
 describe('threadReducers  function', () => {

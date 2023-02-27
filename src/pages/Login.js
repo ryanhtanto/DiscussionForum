@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from '../components/loginForm';
 import { asyncSetAuthUser } from '../states/authUser/action';
 
 function Login() {
   const dispatch = useDispatch();
-  const navigate = useNavigate;
+
   const onLogin = ({ email, password }) => {
     dispatch(asyncSetAuthUser({ email, password }));
-    navigate('/');
   };
   return (
     <section>

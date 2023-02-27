@@ -1,6 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
+/**
+ * test scenario for threadDetail action test
+ *
+ * - asyncReceiveThreadDetail thunk function
+ *  - should dispatch action correctly when data fetching success
+ *
+ */
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 import { asyncReceiveThreadDetail, receiveThreadDetailActionCreator } from './action';

@@ -1,5 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
+/**
+ * test scenario for shared action test
+ *
+ * - asyncPopulateUsersAndThreads thunk function
+ *  - should dispatch action correctly when data fetching success
+ *  - should dispatch action and call alert correctly when data fetching failed
+ *
+ */
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 import { receiveThreadsActionCreator } from '../threads/action';
